@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Keycloak Example</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<%
+		try {
+			if (user) {
+		%>
+				<p>Welcome <%= user.name %></p>
+				<p>Your email is: <%= user.email %></p>
+				<p>Your username is: <%= user.username %></p>
+			<% } else { %>
+				<p>User not found</p>
+			<% } %>
+		<%
+		} catch (e) {
+			console.error('Error: ', e);
+			%>
+				<p>Some error occurred</p>
+		<% } %>
+	</body>
+</html>
